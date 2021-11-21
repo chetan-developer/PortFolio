@@ -1,0 +1,68 @@
+<section class="section pt-5 bg-light handleScroll" id="contact">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <div class="container-title text-center mb-4 pb-2 mt-4">
+          <div class="titles">
+            <h2 class="title text-capitalize mb-4">Contact Me</h2>
+            <!-- <p class="pera-title para-desc-600 text-light-muted mb-0 mx-auto">Obviously I'm a Web
+                                Designer. Experienced with all stages of the development cycle for dynamic web projects.
+                            </p> -->
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <div class="custom-form mb-sm-30">
+          <ng-container *ngIf="WarningList.length">
+            <ul style="list-style-type: none;">
+              <li class="alert alert-warning error_message" *ngFor="let item of WarningList">{{item}}</li>
+            </ul>
+          </ng-container>
+          <div class="alert alert-success success_message" *ngIf="successMessage">
+            {{successMessage}}
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-lg-12 col-md-6">
+                  <div class="form-group">
+                    <input name="name" id="name" [(ngModel)]="name" type="text" class="form-control border rounded"
+                      placeholder="First Name :" autocomplete="off" required>
+                  </div>
+                </div>
+                <div class="col-lg-12 col-md-6">
+                  <div class="form-group">
+                    <input name="email" id="email" type="email" [(ngModel)]="email" autocomplete="off"
+                      class="form-control border rounded" placeholder="Your email :" required>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input name="subject" id="subject" class="form-control border rounded" [(ngModel)]="subject"
+                      autocomplete="off" placeholder="Your subject :" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="form-group">
+                <textarea name="comments" autocomplete="off" id="comments" rows="4" [(ngModel)]="message"
+                  class="form-control border rounded" placeholder="Your Message :" required></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 text-end">
+              <input type="submit" id="submit" name="send" class="submitBnt btn btn btn-primary rounded"
+                value="Send Message" (click)="onSubmit()">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

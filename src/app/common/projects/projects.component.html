@@ -1,0 +1,71 @@
+<section class="section bg-light handleScroll" id="projects">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <div class="container-title text-center mb-4 pb-2">
+          <div class="titles">
+            <h2 class="title text-capitalize mb-4">Projects</h2>
+            <p class="pera-title para-desc-600 text-light-muted mb-0 mx-auto">I have created some
+              projects for learning purpose.With this projects I have learned some new things which
+              helped me to improve and grow as a developer.
+            </p>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class=" col-xl-12 col-lg-12 col-md-12 col-12 mt-4 pt-2" *ngFor="let item of ProjectArray">
+        <div class="feature-widget text-left rounded ">
+          <div
+            class="row m-0 d-xl-flex d-lg-flex d-md-flex flex-xl-row-reverse flex-lg-row-reverse flex-md-row-reverse ">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+              <div class="card border-0 work-container work-modern position-relative d-block overflow-hidden rounded"
+                (click)="item.clickEvent()">
+                <div class="card-body p-0">
+                  <img [src]="item.mainImage" class="img-fluid" style="height: 300px;width: 100%;" [alt]="item.title">
+                  <div class="overlay-work bg-dark"></div>
+                  <div class="icons text-center">
+                    <div style="position: relative;justify-content: center;display: flex;" class="project-image">
+                      <div style="height: 45px;width: 45px;border-radius: 50%;background-color: #ffffff;">
+                        <mat-icon class="mat-icon">camera_alt</mat-icon>
+                      </div>
+                    </div>
+                    <img [src]="images" *ngFor="let images of item.images" data-gallery="myGal"
+                      class=" d-none {{item.classLabel}}" alt="" srcset="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12" style="position: relative;">
+              <div class="projects-texts mt-2">
+                <h3 class="title mb-3">{{item.title}}</h3>
+                <div class="pb-2">
+                  <ul>
+                    <li class="text-light-muted" *ngFor="let details of item.detailList">
+                      <ng-container *ngIf="details.isBold"><b>{{details.boldText}}</b> :</ng-container>
+                      <span>{{details.text}}</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="d-flex my-2 flex-wrap">
+                  <div class="chips" *ngFor="let badges of item.skillBedges">{{badges}}</div>
+                </div>
+                <div class="d-flex mt-3 justify-content-end d-xl-block d-lg-block d-md-block d-none ReadMoreDiv">
+                  <a [href]="item.visitUrl" target="_blank" class="text-primary">Visit Page <i
+                      class="mdi mdi-chevron-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex mt-3 justify-content-end d-xl-none d-lg-none d-md-none d-block ">
+            <a [href]="item.visitUrl" target="_blank" class="text-primary">Visit
+              Page <i class="mdi mdi-chevron-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

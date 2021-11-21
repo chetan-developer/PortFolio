@@ -1,0 +1,36 @@
+<div id="style-switcher" class="bg-light border p-3 pt-2 pb-2">
+  <div>
+    <h6 class="color-scheme-title text-center font-weight-bolder mb-2">Select your color</h6>
+    <ul class="pattern text-center mb-0">
+      <li class="list-inline-item">
+        <a class="default" href="javascript: void(0);" (click)="setColor('default')"></a>
+      </li>
+      <li class="list-inline-item">
+        <a class="blue" href="javascript: void(0);" (click)="setColor('red')"></a>
+      </li>
+      <li class="list-inline-item">
+        <a class="green" href="javascript: void(0);" (click)="setColor('green')"></a>
+      </li>
+      <li class="list-inline-item">
+        <a class="mosaic-blue" href="javascript: void(0);" (click)="setColor('mosaic-blue')"></a>
+      </li>
+      <li class="list-inline-item">
+        <a class="light-yellow" href="javascript: void(0);" (click)="setColor('light-yellow')"></a>
+      </li>
+      <li class="list-inline-item">
+        <a class="purple" href="javascript: void(0);" (click)="setColor('purple')"></a>
+      </li>
+    </ul>
+    <div class="bottom">
+      <!-- <div class="settings bg-white shadow d-block" (click)="toggleSwitch()">
+
+        <mat-icon class="fas fa-cog  mdi-24px position-absolute mdi-spin text-primary" style="">settings</mat-icon>
+
+      </div> -->
+      <div class="settings bg-white shadow d-block" (click)="toggleSwitch()">
+        <i class="fas fa-cog  mdi-24px position-absolute mdi-spin text-primary" style="top: 27%;
+          font-size: 20px;"></i>
+      </div>
+    </div>
+  </div>
+</div>
